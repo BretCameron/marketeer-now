@@ -28,7 +28,18 @@
 		<!-- CONTENT PREVIEW -->
 				<a class="permalink" href="<?php the_permalink(); ?>">
 					<p class="content-preview">
-                        <?= contentPreview($content) . '...' ?>
+						<?php
+					if (has_excerpt()) {
+						$excerpt = wp_strip_all_tags(get_the_excerpt());
+						if (preg_match("/[\.!?,;:]$/", $excerpt)) {
+							echo $excerpt;
+						} else {
+							echo $excerpt . '...';
+						};
+					} else {
+						echo contentPreview($content) . '...';
+					};
+					?>
                     </p>
                     <br>
 				</a>                

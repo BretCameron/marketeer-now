@@ -429,6 +429,17 @@ footer h2 {
   border-left: 1px solid lightgray;
 }
 
+hr.style-one {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc);
+  background-image: -moz-linear-gradient(left, #ccc, #333, #ccc);
+  background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
+  background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
+  background-image: linear-gradient(left, #ccc, #333, #ccc);
+}
+
 .related-img-wrapper {
   object-fit: fill;
   overflow: hidden;
@@ -498,3 +509,19 @@ a.permalink:hover > div > .related-stories-img {
 }
 
 /* LIGHTBOX */
+
+/* .lightbox-img > .post-thumbnail {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.lightbox-img > .post-thumbnail > img {
+  transform: scale(2);
+  height: auto;
+  width: auto;
+  display: block;
+  position: fixed;
+  max-width: 90vw;
+  padding: 50px;
+} */
