@@ -18,10 +18,9 @@
 <!-- SOCIAL MEDIA ICONS -->
 <footer id="colophon" class="footer-top site-footer">
 	<div class="container">
-		<h2>Some Fancy Motto Goes Here</h2>
 		<p>© Bret Cameron 2019
 			<br>
-			<a class="text-link">https://linkedin.com/in/bretcameron/</a>
+			<a href="https://linkedin.com/in/bretcameron/" class="footer-link">https://linkedin.com/in/bretcameron/</a>
 		</p>
 	</div>
 </footer>

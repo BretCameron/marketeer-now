@@ -15,8 +15,17 @@ get_header();
 <div id="primary" class="content-area">
 	<main id="main" class="site-main">
 		<div class="container">
+		
+			<div>
+
+
+</div>
 			
-			
+<?php $imgURL = get_avatar(the_author_meta('ID'));
+// get_avatar_url(the_author_meta('ID')); 
+?>
+
+
 <?php
 while (have_posts()) :
 	the_post();
@@ -30,6 +39,7 @@ while (have_posts()) :
 marketeer_now_post_thumbnail();
 ?>
 
+
 					<h1>
 						<?= the_title() ?>
 					</h1>
@@ -41,20 +51,7 @@ marketeer_now_post_thumbnail();
 						<?= getReadingTime(get_the_content()); ?>
 					</div>
 					<p><?= the_content() ?></p>
-					<hr class="style-one">
-
-<br><h2>About the Author</h2>
-<p><?php $authorDesc = the_author_meta('description');
-		echo $authorDesc; ?>
-</p>
-<br>
-<hr class="style-one">
-<br>
-
-
-
-
-
+					<br>
 
 				</div>
 				<div class="related-block">
@@ -101,20 +98,30 @@ endwhile;
 </form><br><hr class="style-one">
 
 				</div>
-			</div>
-			
+			</div>	
 		</div><!-- .container -->
 
+		<hr class="style-one">
+<div class="container author-container">
+
+<div class="about-the-author">
+<h3>About <?= the_author_meta('first_name') ?> <?= the_author_meta('last_name') ?></h3>
+
+<div class="flex-author">
+<div class="author-image"><?= $imgURL ?></div>
+
+<p><?php $authorDesc = the_author_meta('description');
+		echo $authorDesc; ?></p>
+		</div>
+		</div>
+
+<br>
+</div>
+<hr class="style-one">
+
+
+
 <?php
-// get_template_part('template-parts/content', get_post_type());
-
-
-the_post_navigation();
-
-// If comments are open or we have at least one comment, load up the comment template.
-if (comments_open() || get_comments_number()) :
-	comments_template();
-endif;
 
 endwhile; // End of the loop.
 ?>
@@ -123,7 +130,7 @@ endwhile; // End of the loop.
 </div><!-- #primary -->
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();
 
 ?>

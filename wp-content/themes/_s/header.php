@@ -25,19 +25,6 @@
 <body <?php body_class(); ?>>
 
  <!-- HEADER -->
-    <nav id="header-links">
-        <div class="container">
-			<?php
-		wp_nav_menu(array(
-			'theme_location' => 'menu-1',
-			'menu_id' => 'primary-menu'
-		));
-		?>
-        </div>
-	</nav>
-	
-
-
 
     <header id="nav-header">
         <div class="container">
