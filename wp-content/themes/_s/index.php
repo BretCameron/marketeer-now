@@ -55,44 +55,7 @@ endwhile;
 wp_reset_postdata();
 ?>
 				</div>
-				<br>
 
-				
-				<h2>Influencer Marketing</h2>
-				<div class="latest-posts">
-<?php
-// query_posts('category_name="Influencer Marketing" &posts_per_page=6');
-
-$infMarketingPosts = new WP_Query('category_name=influencer-marketing');
-
-while ($infMarketingPosts->have_posts()) : $infMarketingPosts->the_post();
-$ids[] = get_the_ID();
-
-$content = apply_filters('the_content', $post->post_content);
-require 'post-preview.php';
-endwhile;
-
-?>
-			</div>
-			<br>
-
-
-				<h2>Social Media</h2>
-				<div class="latest-posts">
-<?php
-// query_posts('category_name="Influencer Marketing" &posts_per_page=6');
-
-$infMarketingPosts = new WP_Query('category_name=social-media');
-
-while ($infMarketingPosts->have_posts()) : $infMarketingPosts->the_post();
-$ids[] = get_the_ID();
-
-$content = apply_filters('the_content', $post->post_content);
-require 'post-preview.php';
-endwhile;
-
-?>
-			</div>
 			<br>
 
 

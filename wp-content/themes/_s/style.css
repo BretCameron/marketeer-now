@@ -51,6 +51,17 @@ p {
   padding: 0 10px;
 }
 
+.display-none {
+  display: none;
+}
+
+/* CONSTRAIN CUSTOM LOGO SIZE, ALLOWING LARGER IMAGES FOR HIGH RETINA DISPLAYS */
+
+img.custom-logo {
+  width: 220px;
+  height: 62px;
+}
+
 /* TEMPORARILY DISABLE CATEGORY LINKS */
 
 ul.post-categories > li > a {
@@ -440,6 +451,11 @@ a.footer-link {
 
 a.footer-link:hover {
   text-decoration: underline;
+}
+
+a.footer-link:visited {
+  color: white;
+  text-decoration: none;
 }
 
 /* PAGE */

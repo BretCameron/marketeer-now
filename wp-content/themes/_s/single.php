@@ -8,6 +8,7 @@
  * @package Marketeer_Now
  */
 
+
 get_header();
 ?>
 
@@ -87,15 +88,31 @@ endif;
 endwhile;
 
 ?>
-
+<div class="display-none">
 <hr class="style-one">
 <br>
 <h2>Don't miss a story</h2>
 <div style="text-align:center;">Get the highlights of Marketeer Now straight to your inbox, once a week.<p>
-<form class="sidebar-form">
-<input type="email" name="emailaddress" placeholder="name@email.com">
+
+
+<form class="sidebar-form" action="<?= the_permalink() ?>" method="post">
+
+	<input type="text" name="email_address" value="<?php echo esc_attr($_POST['email_address']); ?>" placeholder="name@email.com">
+
+	<br><br>
+	
+	<input type="submit" name="submit" value="Sign Up">
+	
+	<?php 
+
+?>
+
 <button type="button">Sign up</button>
-</form><br><hr class="style-one">
+</form>
+</div>
+
+
+<br><hr class="style-one">
 
 				</div>
 			</div>	
@@ -103,6 +120,12 @@ endwhile;
 
 		<hr class="style-one">
 <div class="container author-container">
+
+<?php
+endwhile;
+while (have_posts()) :
+	the_post();
+?>
 
 <div class="about-the-author">
 <h3>About <?= the_author_meta('first_name') ?> <?= the_author_meta('last_name') ?></h3>
