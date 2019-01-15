@@ -131,7 +131,7 @@ while (have_posts()) :
 <h3>About <?= the_author_meta('first_name') ?> <?= the_author_meta('last_name') ?></h3>
 
 <div class="flex-author">
-<div class="author-image"><?= $imgURL ?></div>
+<div class="author-image"><?php echo get_avatar(get_the_author_meta('ID'), 32); ?></div>
 
 <p><?php $authorDesc = the_author_meta('description');
 		echo $authorDesc; ?></p>
