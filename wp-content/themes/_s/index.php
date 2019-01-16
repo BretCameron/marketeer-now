@@ -34,8 +34,7 @@ endwhile;
 wp_reset_postdata();
 ?>
 
-
-		<!-- LATEST POSTS -->
+	<!-- LATEST POSTS -->
 
 				<h2>Latest Posts</h2>
 				<div class="latest-posts">
@@ -57,6 +56,7 @@ wp_reset_postdata();
 				</div>
 
 			<br>
+	
 
 
 
