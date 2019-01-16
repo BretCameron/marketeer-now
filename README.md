@@ -1,5 +1,5 @@
 # marketeer-now
-A magazine-style Wordpress theme, built on top of the Underscores starter theme, for MarketeerNow.com(https://marketeernow.com).
+A magazine-style Wordpress theme, built on top of the Underscores starter theme, for [MarketeerNow.com](https://marketeernow.com).
 
 [![Build Status](https://travis-ci.org/BretCameron/magazine-wordpress-theme.svg?branch=master)](https://travis-ci.org/BretCameron/magazine-wordpress-theme/)
 
