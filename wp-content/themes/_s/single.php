@@ -36,8 +36,8 @@ while (have_posts()) :
 			<div class="flex-article">
 				<div class="article-block">
 <?php
-marketeer_now_post_thumbnail();
 the_category();
+marketeer_now_post_thumbnail();
 ?>
 
 
@@ -45,12 +45,13 @@ the_category();
 						<?= the_title() ?>
 					</h1>
                
-			   <p>By <?php the_author(); ?> — <?= the_time("l, F jS, Y \a\\t g:i A") ?></p>
+			   <p class="by-line">By <?php the_author(); ?> — <?= the_time("l, F jS, Y \a\\t g:i A") ?></p>
 
 					<div class="read-time">
 						<br>
 						<?= getReadingTime(get_the_content()); ?>
 					</div>
+					<!-- <hr class="style-one" style="width: 90%;"> -->
 					<p><?= the_content() ?></p>
 					<br>
 
