@@ -41,6 +41,13 @@ h2 {
   letter-spacing: 0.5em;
 }
 
+.article-block > h2,
+.article-block > h3,
+.article-block > h4,
+.article-block > h5 {
+  padding-top: 15px;
+}
+
 p {
   font-size: 20px;
   font-family: "Muli", sans-serif;
