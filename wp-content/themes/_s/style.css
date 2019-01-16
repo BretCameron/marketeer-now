@@ -51,6 +51,15 @@ p {
   padding: 0 10px;
 }
 
+.social-icon {
+  padding-right: 5px;
+  transition-duration: 100ms;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+}
+
 .display-none {
   display: none;
 }

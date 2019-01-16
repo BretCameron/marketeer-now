@@ -133,15 +133,16 @@ while (have_posts()) :
 <div class="flex-author">
 <div class="author-image"><?php echo get_avatar(get_the_author_meta('ID'), 32); ?></div>
 
-<p><?php $authorDesc = the_author_meta('description');
-		echo $authorDesc; ?></p>
+<p id="author-description">
+<?php $authorDesc = the_author_meta('description');
+echo $authorDesc; ?>
+</p>
 		</div>
 		</div>
 
 <br>
 </div>
 <hr class="style-one">
-
 
 
 <?php
@@ -151,6 +152,53 @@ endwhile; // End of the loop.
 
 	</main><!-- #main -->
 </div><!-- #primary -->
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+// AUTOMATIC SOCIAL ICONS
+// Define Regex
+const regexLinkedIn = /https:\/\/linkedin\.com\/in\/\S*/;
+const regexTwitter = /https:\/\/twitter\.com\/\S*/;
+
+// Define URLs (if present)
+let LinkedInURL = '';
+if (regexLinkedIn.test($('#author-description').text())) {
+	 LinkedInURL = $('#author-description').text().match(regexLinkedIn)[0];
+	 console.log(LinkedInURL);
+};
+
+let TwitterURL = '';
+if (regexTwitter.test($('#author-description').text())) {
+	 TwitterURL = $('#author-description').text().match(regexTwitter)[0];
+	 console.log(TwitterURL);
+};
+
+// Remove URLs From Text
+let authorDesc = $('#author-description').text();
+authorDesc = authorDesc.replace(regexLinkedIn,'').replace(regexTwitter,'').trim();
+console.log(authorDesc);
+$('#author-description').html(authorDesc);
+
+// Append Social Icons
+$('#author-description').append(
+	`<br><br>`
+).append(
+	`<a target="_blank" href="${LinkedInURL}"><img class="social-icon" src="https://dl.dropboxusercontent.com/s/1p8yi33ppon2msu/LinkedIn.svg?dl=0" height="30px" width="30px"></a>`
+).append(
+	`<a target="_blank" href="${TwitterURL}"><img class="social-icon" src="https://dl.dropboxusercontent.com/s/x0u21ib0lqj2hxs/Twitter.svg?dl=0" height="30px" width="30px"></a>`
+)
+
+</script>
+
+
+
+
+
+
+
 
 <?php
 // get_sidebar();
