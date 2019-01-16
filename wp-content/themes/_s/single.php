@@ -36,8 +36,8 @@ while (have_posts()) :
 			<div class="flex-article">
 				<div class="article-block">
 <?php
-
 marketeer_now_post_thumbnail();
+the_category();
 ?>
 
 
@@ -146,9 +146,40 @@ echo $authorDesc; ?>
 
 
 <?php
-
 endwhile; // End of the loop.
 ?>
+<br>
+<h2>Related Stories</h2>
+
+<div class="related2-flex container">
+					<?php
+
+				$relatedPosts2 = new WP_Query('posts_per_page=5');
+				$postid = get_the_ID();
+
+				while ($relatedPosts2->have_posts()) : $relatedPosts2->the_post();
+
+				if (get_the_ID() !== $postid) :
+					$content = apply_filters('the_content', $post->post_content);
+				?>
+
+<a class="permalink" href="<?php the_permalink(); ?>">
+<div class="related-img-wrapper related2">		
+<div class="related-stories-img">
+						<?php marketeer_now_post_thumbnail(); ?>
+					</div></div>
+				
+					<div class="related-title"><?= the_title() ?></div>
+					<br>
+				
+				</a>
+				
+				<?php
+			endif;
+			endwhile;
+			?>
+</div>
+
 
 	</main><!-- #main -->
 </div><!-- #primary -->
@@ -160,45 +191,45 @@ endwhile; // End of the loop.
 
 // AUTOMATIC SOCIAL ICONS
 // Define Regex
-const regexLinkedIn = /https:\/\/[www\.]?linkedin\.com\/in\/\S*/;
-const regexTwitter = /https:\/\/[www\.]?twitter\.com\/\S*/;
+const regexLinkedIn = /https?:\/\/(www\.)?linkedin\.com\/(in\/)?([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
+const regexTwitter = /https?:\/\/(www\.)?twitter\.com\/([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
 
-// Define URLs (if present)
-let LinkedInURL = '';
-if (regexLinkedIn.test($('#author-description').text())) {
-	 LinkedInURL = $('#author-description').text().match(regexLinkedIn)[0];
-	 console.log(LinkedInURL);
+const autoSocialIcons = {
+	LinkedIn: {
+		regex: /https?:\/\/(www\.)?linkedin\.com\/(in\/)?([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i,
+		imageURL: 'https://dl.dropboxusercontent.com/s/1p8yi33ppon2msu/LinkedIn.svg?dl=0'
+	},
+	Twitter: {
+		regex: /https?:\/\/(www\.)?twitter\.com\/([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i,
+		imageURL: 'https://dl.dropboxusercontent.com/s/x0u21ib0lqj2hxs/Twitter.svg?dl=0'
+	},
+	Facebook: {
+		regex: /https?:\/\/(www\.)?facebook\.com\/([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i,
+		imageURL: 'https://dl.dropboxusercontent.com/s/upjji1970acdolv/Facebook.svg?dl=0'
+	},
+	YouTube: {
+		regex: /https?:\/\/(www\.)?youtube\.com\/(channel\/)?([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i,
+		imageURL: 'https://dl.dropboxusercontent.com/s/auwjpg26afpb4qd/YouTube.svg?dl=0'
+	}
+	
 };
+let authorDescription = $('#author-description').text();
 
-let TwitterURL = '';
-if (regexTwitter.test($('#author-description').text())) {
-	 TwitterURL = $('#author-description').text().match(regexTwitter)[0];
-	 console.log(TwitterURL);
-};
+Object.entries(autoSocialIcons).forEach(([key, value]) => {
+	if (autoSocialIcons[key]['regex'].test($('#author-description').text())) {
+		autoSocialIcons[key]['URL'] = $('#author-description').text().match(autoSocialIcons[key]['regex'])[0];
+		authorDescription = authorDescription.replace(autoSocialIcons[key]['regex'],'');
+		$('#author-description').html(authorDescription);
+	};
+});
 
-// Remove URLs From Text
-let authorDesc = $('#author-description').text();
-authorDesc = authorDesc.replace(regexLinkedIn,'').replace(regexTwitter,'').trim();
-console.log(authorDesc);
-$('#author-description').html(authorDesc);
+$('#author-description').append('<br><br>');
 
-// Append Social Icons
-$('#author-description').append(
-	`<br><br>`
-)
-
-if (LinkedInURL !== ''){
-	$('#author-description').append(
-	`<a target="_blank" href="${LinkedInURL}"><img class="social-icon" src="https://dl.dropboxusercontent.com/s/1p8yi33ppon2msu/LinkedIn.svg?dl=0" height="30px" width="30px"></a>`
-);
-};
-
-if (TwitterURL !== ''){
-	$('#author-description').append(
-	`<a target="_blank" href="${TwitterURL}"><img class="social-icon" src="https://dl.dropboxusercontent.com/s/x0u21ib0lqj2hxs/Twitter.svg?dl=0" height="30px" width="30px"></a>`
-);
-};
-
+Object.entries(autoSocialIcons).forEach(([key, value]) => {
+	if(autoSocialIcons[key]['URL']) {
+		$('#author-description').append(`<a href="${autoSocialIcons[key]['URL']}"><img class="social-icon" src="${autoSocialIcons[key]['imageURL']}" alt="${autoSocialIcons[key]['URL']}" height="30px" width="30px"></a>`);
+	};
+});
 
 </script>
 
