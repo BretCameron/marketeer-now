@@ -160,8 +160,8 @@ endwhile; // End of the loop.
 
 // AUTOMATIC SOCIAL ICONS
 // Define Regex
-const regexLinkedIn = /https:\/\/linkedin\.com\/in\/\S*/;
-const regexTwitter = /https:\/\/twitter\.com\/\S*/;
+const regexLinkedIn = /https:\/\/[www\.]?linkedin\.com\/in\/\S*/;
+const regexTwitter = /https:\/\/[www\.]?twitter\.com\/\S*/;
 
 // Define URLs (if present)
 let LinkedInURL = '';
@@ -185,11 +185,20 @@ $('#author-description').html(authorDesc);
 // Append Social Icons
 $('#author-description').append(
 	`<br><br>`
-).append(
-	`<a target="_blank" href="${LinkedInURL}"><img class="social-icon" src="https://dl.dropboxusercontent.com/s/1p8yi33ppon2msu/LinkedIn.svg?dl=0" height="30px" width="30px"></a>`
-).append(
-	`<a target="_blank" href="${TwitterURL}"><img class="social-icon" src="https://dl.dropboxusercontent.com/s/x0u21ib0lqj2hxs/Twitter.svg?dl=0" height="30px" width="30px"></a>`
 )
+
+if (LinkedInURL !== ''){
+	$('#author-description').append(
+	`<a target="_blank" href="${LinkedInURL}"><img class="social-icon" src="https://dl.dropboxusercontent.com/s/1p8yi33ppon2msu/LinkedIn.svg?dl=0" height="30px" width="30px"></a>`
+);
+};
+
+if (TwitterURL !== ''){
+	$('#author-description').append(
+	`<a target="_blank" href="${TwitterURL}"><img class="social-icon" src="https://dl.dropboxusercontent.com/s/x0u21ib0lqj2hxs/Twitter.svg?dl=0" height="30px" width="30px"></a>`
+);
+};
+
 
 </script>
 
