@@ -35,7 +35,7 @@ while (have_posts()) :
 	the_post();
 ?> 
 			
-			<br>
+			
 			<div class="flex-article">
 				<div class="article-block">
 
