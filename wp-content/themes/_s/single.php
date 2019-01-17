@@ -12,7 +12,10 @@
 get_header();
 ?>
 
-
+<?php
+global $wp;
+$currentURL = home_url($wp->request)
+?>
 <div id="primary" class="content-area">
 	<main id="main" class="site-main">
 		<div class="container">
@@ -35,8 +38,22 @@ while (have_posts()) :
 			<br>
 			<div class="flex-article">
 				<div class="article-block">
+
+<div class="flex-above-article">
+	<div class="above-article-category">
+<?php the_category(); ?>
+	</div>
+	<div class="above-article-social-icons">
+<a href="https://www.facebook.com/sharer/sharer.php?u=<?= $currentURL ?>" target="_blank"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/abnb2wuf4tjrh6u/Facebook.svg?dl=0" alt="Share on Facebook"></a>
+<a href="https://twitter.com/share?ref_src=<?= $currentURL ?>" target="_blank"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/ob40ouepc8qfe76/Twitter.svg?dl=0" alt="Tweet"></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&url=<?= $currentURL ?>&title=LinkedIn%20Developer%20Network
+&summary=My%20favorite%20developer%20program&source=LinkedIn" target="_blank"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/2amnqal3ghrvfrq/LinkedIn.svg?dl=0" alt="Share on LinkedIn"></a>
+<a href="mailto:?subject=<?= the_title() ?>&body=Article: <?= $currentURL ?>"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/gooz572gd6ogwzs/Email.svg?dl=0" alt="Email"></a>
+	</div>
+</div>
+
+
 <?php
-the_category();
 marketeer_now_post_thumbnail();
 ?>
 
@@ -118,7 +135,14 @@ endwhile;
 				</div>
 			</div>	
 		</div><!-- .container -->
+		
+		<!-- SOCIAL SHARE BUTTONS -->
 
+<a href="https://www.facebook.com/sharer/sharer.php?u=<?= $currentURL ?>" target="_blank"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/abnb2wuf4tjrh6u/Facebook.svg?dl=0" alt="Share on Facebook"></a>
+<a href="https://twitter.com/share?ref_src=<?= $currentURL ?>" target="_blank"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/ob40ouepc8qfe76/Twitter.svg?dl=0" alt="Tweet"></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&url=<?= $currentURL ?>&title=LinkedIn%20Developer%20Network
+&summary=My%20favorite%20developer%20program&source=LinkedIn" target="_blank"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/2amnqal3ghrvfrq/LinkedIn.svg?dl=0" alt="Share on LinkedIn"></a>
+<a href="mailto:?subject=<?= the_title() ?>&body=Article: <?= $currentURL ?>"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/gooz572gd6ogwzs/Email.svg?dl=0" alt="Email"></a>
 		<hr class="style-one">
 <div class="container author-container">
 
@@ -145,8 +169,6 @@ echo $authorDesc; ?>
 <br>
 </div>
 <hr class="style-one">
-
-
 <?php
 endwhile; // End of the loop.
 ?>
@@ -180,11 +202,17 @@ endwhile; // End of the loop.
 			endif;
 			endwhile;
 			?>
+
+
+
 </div>
-
-
 	</main><!-- #main -->
 </div><!-- #primary -->
+
+
+
+
+
 
 
 

@@ -82,6 +82,13 @@ p.by-line,
 .social-icon {
   padding-right: 5px;
   transition-duration: 100ms;
+  height: 30px;
+  width: 30px;
+}
+
+.social-icon-large {
+  height: 35px;
+  width: 35px;
 }
 
 .social-icon:hover {
@@ -523,6 +530,32 @@ a.footer-link:visited {
 
 .flex-article {
   display: flex;
+}
+
+.flex-above-article {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding-bottom: 5px;
+}
+
+.above-article-category {
+  padding-top: 5px;
+  display: block;
+  letter-spacing: 2px;
+  padding-right: 50px;
+}
+
+.above-article-category > ul > li {
+  font-weight: bold;
+  font-style: italic;
+  color: grey;
+}
+
+@media only screen and (max-width: 500px) {
+  .flex-above-article {
+    display: none;
+  }
 }
 
 .article-block {
