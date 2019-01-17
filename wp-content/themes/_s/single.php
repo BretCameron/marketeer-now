@@ -189,6 +189,7 @@ endwhile; // End of the loop.
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <script>
 
 // AUTOMATIC SOCIAL ICONS
@@ -197,47 +198,44 @@ const regexLinkedIn = /https?:\/\/(www\.)?linkedin\.com\/(in\/)?([-a-zA-Z0-9@:%_
 const regexTwitter = /https?:\/\/(www\.)?twitter\.com\/([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
 
 const autoSocialIcons = {
-	LinkedIn: {
-		regex: /https?:\/\/(www\.)?linkedin\.com\/(in\/)?([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i,
-		imageURL: 'https://dl.dropboxusercontent.com/s/1p8yi33ppon2msu/LinkedIn.svg?dl=0'
-	},
-	Twitter: {
-		regex: /https?:\/\/(www\.)?twitter\.com\/([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i,
-		imageURL: 'https://dl.dropboxusercontent.com/s/x0u21ib0lqj2hxs/Twitter.svg?dl=0'
-	},
-	Facebook: {
-		regex: /https?:\/\/(www\.)?facebook\.com\/([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i,
-		imageURL: 'https://dl.dropboxusercontent.com/s/upjji1970acdolv/Facebook.svg?dl=0'
-	},
-	YouTube: {
-		regex: /https?:\/\/(www\.)?youtube\.com\/(channel\/)?([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i,
-		imageURL: 'https://dl.dropboxusercontent.com/s/auwjpg26afpb4qd/YouTube.svg?dl=0'
-	}
-	
+    LinkedIn: {
+        regex: /https?:\/\/(www\.)?linkedin\.com\/(in\/)?([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i,
+        imageURL: 'https://dl.dropboxusercontent.com/s/1p8yi33ppon2msu/LinkedIn.svg?dl=0'
+    },
+    Twitter: {
+        regex: /https?:\/\/(www\.)?twitter\.com\/([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i,
+        imageURL: 'https://dl.dropboxusercontent.com/s/x0u21ib0lqj2hxs/Twitter.svg?dl=0'
+    },
+    Facebook: {
+        regex: /https?:\/\/(www\.)?facebook\.com\/([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i,
+        imageURL: 'https://dl.dropboxusercontent.com/s/upjji1970acdolv/Facebook.svg?dl=0'
+    },
+    YouTube: {
+        regex: /https?:\/\/(www\.)?youtube\.com\/(channel\/)?([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i,
+        imageURL: 'https://dl.dropboxusercontent.com/s/auwjpg26afpb4qd/YouTube.svg?dl=0'
+    }
+
 };
 let authorDescription = $('#author-description').text();
 
 Object.entries(autoSocialIcons).forEach(([key, value]) => {
-	if (autoSocialIcons[key]['regex'].test($('#author-description').text())) {
-		autoSocialIcons[key]['URL'] = $('#author-description').text().match(autoSocialIcons[key]['regex'])[0];
-		authorDescription = authorDescription.replace(autoSocialIcons[key]['regex'],'');
-		$('#author-description').html(authorDescription);
-	};
+    if (autoSocialIcons[key]['regex'].test($('#author-description').text())) {
+        autoSocialIcons[key]['URL'] = $('#author-description').text().match(autoSocialIcons[key]['regex'])[0];
+        authorDescription = authorDescription.replace(autoSocialIcons[key]['regex'], '');
+        $('#author-description').html(authorDescription);
+    };
 });
 
 $('#author-description').append('<br><br>');
 
 Object.entries(autoSocialIcons).forEach(([key, value]) => {
-	if(autoSocialIcons[key]['URL']) {
-		$('#author-description').append(`<a href="${autoSocialIcons[key]['URL']}"><img class="social-icon" src="${autoSocialIcons[key]['imageURL']}" alt="${autoSocialIcons[key]['URL']}" height="30px" width="30px"></a>`);
-	};
+    if (autoSocialIcons[key]['URL']) {
+        $('#author-description').append(`<a href="${autoSocialIcons[key]['URL']}"><img class="social-icon" src="${autoSocialIcons[key]['imageURL']}" alt="${autoSocialIcons[key]['URL']}" height="30px" width="30px"></a>`);
+    };
 });
 
+
 </script>
-
-
-
-
 
 
 

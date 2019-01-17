@@ -747,14 +747,34 @@ a.permalink:hover > div > .related-stories-img {
 #author-page {
   display: block;
   text-align: center;
-  max-width: 600px;
+  max-width: 400px;
   margin: 0 auto;
+  padding: 20px auto;
+}
+
+#author-page > h3 {
+  margin: -10px 0 20px 0;
+  font-style: italic;
+  color: grey;
+  font-weight: 100;
+}
+
+#author-page > #author-description {
+  margin: 20px 0 20px 0;
 }
 
 .author-image > img.avatar {
   margin: -10px 0 10px 0;
 }
 
-#author-page > #author-description {
-  margin: 20px 0 40px 0;
+.author-page-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.author-page-flex > .latest-post {
+  /* max-width: 600px; */
+  width: 600px;
+  min-width: 300px;
 }
