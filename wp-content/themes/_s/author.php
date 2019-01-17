@@ -41,13 +41,21 @@ $totalReadingTime += getReadingTime($content);
 endwhile;
 
 $count = $authorPosts->post_count;
+function countArticles($num)
+{
+    if ($num == 1) {
+        return '1 article';
+    } else {
+        return $num . ' articles';
+    };
+};
 
 ?>
 
 
 <div id="author-page">
 <h1><?= $authorFirstName ?> <?= $authorLastName ?></h1>
-<h3><?php echo $count; ?> articles • <?php echo timeUnits($totalReadingTime) ?> reading time</h3>
+<h3><?php echo countArticles($count); ?> • <?php echo timeUnits($totalReadingTime) ?> reading time</h3>
 
 <div class="author-image"><?php echo get_avatar(get_the_author_meta('ID'), 400); ?></div>
 

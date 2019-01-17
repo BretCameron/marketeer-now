@@ -75,7 +75,7 @@ p.by-line,
 
 @media only screen and (max-width: 900px) {
   .container {
-    padding: 0 6%;
+    padding: 0 2%;
   }
 }
 
@@ -591,7 +591,7 @@ hr.style-one {
 .related-img-wrapper {
   object-fit: cover;
   overflow: hidden;
-  height: 12vw;
+  height: 10vw;
 }
 
 .related2-flex {
@@ -773,6 +773,23 @@ a.permalink:hover > div > .related-stories-img {
   #author-description {
     padding: 15px 0 0 0;
   }
+}
+
+.about-the-author > a {
+  color: black;
+  text-decoration: none;
+}
+
+.about-the-author > a:hover {
+  text-decoration: underline;
+}
+
+a > .author-image > img {
+  transition-duration: 100ms;
+}
+
+a > .author-image > img:hover {
+  transform: translateY(5px);
 }
 
 /* AUTHOR PAGE */

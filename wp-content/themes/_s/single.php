@@ -39,18 +39,14 @@ while (have_posts()) :
 			<div class="flex-article">
 				<div class="article-block">
 
-<div class="flex-above-article">
+<!-- <div class="flex-above-article">
 	<div class="above-article-category">
-<?php the_category(); ?>
+<?php //the_category(); ?>
 	</div>
 	<div class="above-article-social-icons">
-<a href="https://www.facebook.com/sharer/sharer.php?u=<?= $currentURL ?>" target="_blank"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/abnb2wuf4tjrh6u/Facebook.svg?dl=0" alt="Share on Facebook"></a>
-<a href="https://twitter.com/share?ref_src=<?= $currentURL ?>" target="_blank"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/ob40ouepc8qfe76/Twitter.svg?dl=0" alt="Tweet"></a>
-<a href="https://www.linkedin.com/shareArticle?mini=true&url=<?= $currentURL ?>&title=LinkedIn%20Developer%20Network
-&summary=My%20favorite%20developer%20program&source=LinkedIn" target="_blank"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/2amnqal3ghrvfrq/LinkedIn.svg?dl=0" alt="Share on LinkedIn"></a>
-<a href="mailto:?subject=<?= the_title() ?>&body=Article: <?= $currentURL ?>"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/gooz572gd6ogwzs/Email.svg?dl=0" alt="Email"></a>
+<?php //require('social-icons.php'); ?>
 	</div>
-</div>
+</div> -->
 
 
 <?php
@@ -67,6 +63,11 @@ marketeer_now_post_thumbnail();
 					<div class="read-time">
 						<br>
 						<?= getReadingTime(get_the_content()); ?>
+					
+						<br><br><hr class="style-one">
+						<?php require('social-icons.php'); ?>
+						<hr class="style-one">
+
 					</div>
 					<!-- <hr class="style-one" style="width: 90%;"> -->
 					<p><?= the_content() ?></p>
@@ -138,11 +139,7 @@ endwhile;
 		
 		<!-- SOCIAL SHARE BUTTONS -->
 
-<a href="https://www.facebook.com/sharer/sharer.php?u=<?= $currentURL ?>" target="_blank"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/abnb2wuf4tjrh6u/Facebook.svg?dl=0" alt="Share on Facebook"></a>
-<a href="https://twitter.com/share?ref_src=<?= $currentURL ?>" target="_blank"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/ob40ouepc8qfe76/Twitter.svg?dl=0" alt="Tweet"></a>
-<a href="https://www.linkedin.com/shareArticle?mini=true&url=<?= $currentURL ?>&title=LinkedIn%20Developer%20Network
-&summary=My%20favorite%20developer%20program&source=LinkedIn" target="_blank"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/2amnqal3ghrvfrq/LinkedIn.svg?dl=0" alt="Share on LinkedIn"></a>
-<a href="mailto:?subject=<?= the_title() ?>&body=Article: <?= $currentURL ?>"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/gooz572gd6ogwzs/Email.svg?dl=0" alt="Email"></a>
+<?php require('social-icons.php'); ?>
 		<hr class="style-one">
 <div class="container author-container">
 
@@ -154,7 +151,7 @@ $authorURL = get_author_posts_url(get_the_author_meta('ID'));
 ?>
 
 <div class="about-the-author">
-<a href="<?= $authorURL ?>"><h3>About <?= the_author_meta('first_name') ?> <?= the_author_meta('last_name') ?></h3></a>
+<a href="<?= $authorURL ?>"><h3><?= the_author_meta('first_name') ?> <?= the_author_meta('last_name') ?></h3></a>
 
 <div class="flex-author">
 <a href="<?= $authorURL ?>"><div class="author-image"><?php echo get_avatar(get_the_author_meta('ID'), 400); ?></div></a>
