@@ -741,3 +741,20 @@ a.permalink:hover > div > .related-stories-img {
     padding: 15px 0 0 0;
   }
 }
+
+/* AUTHOR PAGE */
+
+#author-page {
+  display: block;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.author-image > img.avatar {
+  margin: -10px 0 10px 0;
+}
+
+#author-page > #author-description {
+  margin: 20px 0 40px 0;
+}

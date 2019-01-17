@@ -126,13 +126,14 @@ endwhile;
 endwhile;
 while (have_posts()) :
 	the_post();
+$authorURL = get_author_posts_url(get_the_author_meta('ID'));
 ?>
 
 <div class="about-the-author">
-<h3>About <?= the_author_meta('first_name') ?> <?= the_author_meta('last_name') ?></h3>
+<a href="<?= $authorURL ?>"><h3>About <?= the_author_meta('first_name') ?> <?= the_author_meta('last_name') ?></h3></a>
 
 <div class="flex-author">
-<div class="author-image"><?php echo get_avatar(get_the_author_meta('ID'), 400); ?></div>
+<a href="<?= $authorURL ?>"><div class="author-image"><?php echo get_avatar(get_the_author_meta('ID'), 400); ?></div></a>
 
 <p id="author-description">
 <?php $authorDesc = the_author_meta('description');
@@ -152,7 +153,7 @@ endwhile; // End of the loop.
 <br>
 <h2>Related Stories</h2>
 
-<div class="related2-flex container">
+<div class="related2-flex">
 					<?php
 
 				$relatedPosts2 = new WP_Query('posts_per_page=5');
