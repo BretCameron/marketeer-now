@@ -12,6 +12,14 @@
 get_header();
 ?>
 
+<?php
+$featuredImageURL = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full', false)[0];
+?>
+
+<div class="lightbox-window hidden">
+<div id="featured-lightbox" class="container"><img class="lightbox-img" src="<?= $featuredImageURL ?>"></div>
+</div> 
+
 <div id="progress-bar"></div>
 
 
@@ -269,6 +277,20 @@ $(window).scroll(function (){
 });
 
 
+// FEATURED IMAGE LIGHTBOX
+$('.article-block > .post-thumbnail > img').click(function () {
+	if ($('.lightbox-window').hasClass('hidden')) {
+		$('.lightbox-window').removeClass('hidden');
+	};
+});
+
+$('.lightbox-window').click(function () {
+	if (!$('.lightbox-window').hasClass('hidden')) {
+		$('.lightbox-window').addClass('hidden');
+	};
+});//.children().click(function(e) {
+//   return false;
+// });;
 
 </script>
 
