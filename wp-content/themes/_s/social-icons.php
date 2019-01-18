@@ -1,6 +1,6 @@
 <?php
-$currentURL = 'https://smart.ly/the-free-mba/admissions';//home_url($wp->request);
-$featuredImageURL = 'https://1pwuq82w8fex3688f429axe1-wpengine.netdna-ssl.com/wp-content/uploads/2008/12/howtostartablog-285x300.jpg';//wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full', false)[0];
+$currentURL = home_url($wp->request);
+$featuredImageURL = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full', false)[0];
 ?>
 
 
