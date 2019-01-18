@@ -60,6 +60,9 @@ while (have_posts()) :
 marketeer_now_post_thumbnail();
 ?>
 
+<div class="vertical-icons">
+	<?php require('social-icons.php'); ?>
+</div>
 
 					<h1>
 						<?= the_title() ?>
@@ -71,8 +74,12 @@ marketeer_now_post_thumbnail();
 						<br>
 						<?= getReadingTime(get_the_content()); ?>
 					
-						<br><br><hr class="style-one">
+						<br><br>
+						
+						<div class="horizontal-icons">
+						<hr class="style-one">
 						<?php require('social-icons.php'); ?>
+</div>
 						<hr class="style-one">
 
 					</div>
@@ -145,8 +152,9 @@ endwhile;
 		</div><!-- .container -->
 		
 		<!-- SOCIAL SHARE BUTTONS -->
-
+<div class="horizontal-icons">
 <?php require('social-icons.php'); ?>
+</div>
 		<hr class="style-one">
 <div class="container author-container">
 

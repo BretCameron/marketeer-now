@@ -97,6 +97,33 @@ p.by-line,
   filter: brightness(0.9);
 }
 
+.vertical-icons {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: -276px;
+  padding-top: 10px;
+  transform: translate(-70px, 276px);
+}
+
+.article-block > .post-thumbnail {
+  padding-top: 3%;
+  margin-bottom: -260px;
+}
+
+@media only screen and (max-width: 1410px) {
+  .vertical-icons {
+    visibility: hidden;
+  }
+}
+
+@media only screen and (min-width: 1410px) {
+  .horizontal-icons {
+    display: none;
+  }
+}
+
+
 .display-none {
   display: none;
 }
