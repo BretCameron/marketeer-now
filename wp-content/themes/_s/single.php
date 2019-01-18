@@ -12,10 +12,9 @@
 get_header();
 ?>
 
-<?php
-global $wp;
-$currentURL = home_url($wp->request)
-?>
+<div id="progress-bar"></div>
+
+
 <div id="primary" class="content-area">
 	<main id="main" class="site-main">
 		<div class="container">
@@ -57,7 +56,7 @@ marketeer_now_post_thumbnail();
 					<h1>
 						<?= the_title() ?>
 					</h1>
-               
+
 			   <p class="by-line">By <?php the_author(); ?> — <?= the_time("l, F jS, Y \a\\t g:i A") ?></p>
 
 					<div class="read-time">
@@ -258,6 +257,17 @@ Object.entries(autoSocialIcons).forEach(([key, value]) => {
         $('#author-description').append(`<a href="${autoSocialIcons[key]['URL']}"><img class="social-icon" src="${autoSocialIcons[key]['imageURL']}" alt="${autoSocialIcons[key]['URL']}" height="30px" width="30px"></a>`);
     };
 });
+
+
+
+// PROGRESS BAR
+$(window).scroll(function (){
+	let maxScroll = $(document).height() - $(window).height();
+	let scroll_pos = $(this).scrollTop();
+	let width = (scroll_pos / maxScroll) * 100;
+	$('#progress-bar').width(width + '%');
+});
+
 
 
 </script>

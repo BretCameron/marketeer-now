@@ -50,7 +50,7 @@ h2 {
 
 .article-block > ul > li,
 .article-block > ol > li {
-  font-size: 20px;
+  font-size: 18px;
   font-family: "Muli", sans-serif;
   font-weight: 300;
   padding: 10px 0;
@@ -87,8 +87,8 @@ p.by-line,
 }
 
 .social-icon-large {
-  height: 35px;
-  width: 35px;
+  height: 32px;
+  width: 32px;
 }
 
 .social-icon:hover {
@@ -98,6 +98,16 @@ p.by-line,
 
 .display-none {
   display: none;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media only screen and (max-width: 480px) {
+  .mobile-only {
+    display: inline;
+  }
 }
 
 /* TEMPORARILY DISABLE CATEGORY LINKS */
@@ -569,6 +579,14 @@ a.footer-link:visited {
   padding-top: 3%;
 }
 
+.related-block > h2 {
+  padding-top: 6%;
+}
+
+.related-stories-img > .post-thumbnail > img {
+  max-height: 200px;
+}
+
 .article-block > .post-categories > li {
   font-style: italic;
   font-weight: bold;
@@ -833,4 +851,18 @@ a > .author-image > img:hover {
   /* max-width: 600px; */
   width: 600px;
   min-width: 300px;
+}
+
+/* PROGRESS BAR */
+
+#progress-bar {
+  height: 6px;
+  width: 0;
+  background: darkcyan;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: -1px;
+  /* 0px is the normal value */
+  /* top: 32px; */
+  /* 3px is helpful for development */
 }
