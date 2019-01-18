@@ -89,6 +89,7 @@ p.by-line,
 .social-icon-large {
   height: 32px;
   width: 32px;
+  background-size: 32px 32px;
 }
 
 .social-icon:hover {

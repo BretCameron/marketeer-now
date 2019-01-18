@@ -5,27 +5,128 @@ $featuredImageURL = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID)
 
 
 <!-- FACEBOOK -->
-<a href="https://www.facebook.com/sharer/sharer.php?u=<?= $currentURL ?>" target="_blank"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/abnb2wuf4tjrh6u/Facebook.svg?dl=0" alt="Share on Facebook"></a>
+<a href="https://www.facebook.com/sharer/sharer.php?u=<?= $currentURL ?>" target="_blank"><svg height="100"
+   width="100"
+   viewBox="0 0 100 100" class="social-icon social-icon-large">
+   <title>Share on Facebook</title>
+    <circle style="fill:#3b5999" r="50" cy="50" cx="50"/>
+    <path style="fill:#ffffff" d="m 54.83,50.34 v 6.22 q 0,10.92 0,21.84 c 0,1.81 -0.06,1.87 -1.85,1.88 -3.13,0 -6.26,0 -9.39,0 -1.21,0 -1.62,-0.42 -1.62,-1.62 0,-8.87 0,-17.74 0,-26.6 0,-1.85 0,-1.83 -1.79,-1.79 -1.06,0 -2.12,0 -3.18,0 -0.82,0 -1.16,-0.37 -1.15,-1.22 0,-2.78 0,-5.56 0,-8.34 0,-0.8 0.31,-1.13 1.09,-1.11 1.28,0 2.56,-0.05 3.84,0 0.94,0.05 1.22,-0.29 1.23,-1.21 0,-2.81 0,-5.65 0.24,-8.45 a 10.72,10.72 0 0 1 10.58,-9.72 c 3.22,-0.08 6.44,-0.11 9.65,-0.22 1.22,0 1.63,0.41 1.59,1.62 -0.07,2.56 0,5.12 0,7.68 0,0.93 -0.35,1.27 -1.24,1.26 -1.54,0 -3.09,-0.05 -4.63,0 -2.38,0.11 -3.3,1 -3.45,3.42 -0.08,1.36 0,2.73 -0.1,4.1 -0.06,1.07 0.42,1.36 1.41,1.34 2.12,0 4.24,0 6.35,0 1.15,0 1.57,0.37 1.42,1.57 q -0.48,3.93 -0.75,7.89 c -0.07,1.21 -0.65,1.44 -1.7,1.41 -2.07,0.01 -4.19,0.05 -6.55,0.05 z"/>
+</svg></a>
 <!-- TWITTER -->
-<a href="https://twitter.com/share?url=<?= $currentURL ?>&text=<?= the_title() ?>&hashtags=MarketeerNow" target="_blank"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/ob40ouepc8qfe76/Twitter.svg?dl=0" alt="Tweet"></a>
+<a href="https://twitter.com/share?url=<?= $currentURL ?>&text=<?= the_title() ?>&hashtags=MarketeerNow" target="_blank"><svg height="100"
+   width="100"
+   viewBox="0 0 100 100" class="social-icon social-icon-large">
+   <title>Share on Twitter</title>
+    <circle
+     style="fill:#55acef"
+     r="50"
+     cy="50"
+     cx="50"/>
+  <path
+     style="fill:#ffffff"
+     d="M 41.84,66 A 11.81,11.81 0 0 1 31.25,57.81 12.43,12.43 0 0 0 36.18,57.55 C 30.41,55.65 27.36,51.9 27,46 l 4.88,1.39 0.15,-0.22 c -5.07,-4.33 -6.2,-9.48 -3.4,-15.7 a 34,34 0 0 0 24.2,12.42 c -0.06,-1 -0.17,-1.94 -0.15,-2.86 a 11.61,11.61 0 0 1 9.94,-11.44 11.41,11.41 0 0 1 9.91,3.11 1,1 0 0 0 1.2,0.26 c 1.91,-0.72 3.83,-1.42 5.74,-2.13 0.26,-0.1 0.51,-0.23 1,-0.44 a 12.22,12.22 0 0 1 -4.8,6.19 l 0.12,0.27 6.21,-1.68 c -1,1.17 -1.79,2.23 -2.71,3.19 -0.92,0.96 -1.74,1.49 -2.55,2.28 A 1.67,1.67 0 0 0 76.24,41.7 34.36,34.36 0 0 1 69.72,62.43 30.66,30.66 0 0 1 55.15,73.77 33.5,33.5 0 0 1 25.92,71.5 3.82,3.82 0 0 1 25.11,70.89 23.7,23.7 0 0 0 41.84,66 Z"/>
+</svg></a>
 <!-- LINKEDIN -->
 <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?= $currentURL ?>&title=LinkedIn%20Developer%20Network
-&summary=My%20favorite%20developer%20program&source=LinkedIn" target="_blank"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/2amnqal3ghrvfrq/LinkedIn.svg?dl=0" alt="Share on LinkedIn"></a>
+&summary=My%20favorite%20developer%20program&source=LinkedIn" target="_blank"><svg height="100"
+   width="100"
+   viewBox="0 0 100 100" class="social-icon social-icon-large">
+   <title>Share on LinkedIn</title>
+<circle
+     style="fill:#0078bb"
+     r="50"
+     cy="50"
+     cx="50"/>
+  <path
+     style="fill:#ffffff"
+     d="M 53.09,41.88 A 12.63,12.63 0 0 1 62,36.59 c 4.61,-0.5 9.09,-0.12 12.53,3.57 a 13.18,13.18 0 0 1 3.24,7.69 65.52,65.52 0 0 1 0.41,7.28 c 0.06,6.28 0,12.57 0,18.85 0,0.83 -0.19,1.12 -1.07,1.11 -3.22,0 -6.45,0 -9.67,0 -0.89,0 -1.16,-0.24 -1.16,-1.15 q 0.06,-9.42 0,-18.84 A 20.39,20.39 0 0 0 66,51.71 c -0.74,-4.12 -3.47,-5.3 -7.25,-4.63 -2.94,0.52 -4.59,2.56 -4.94,5.84 a 38.83,38.83 0 0 0 -0.21,3.89 c 0,5.66 0,11.33 0,17 0,1.27 0,1.27 -1.3,1.27 -3.19,0 -6.38,0 -9.57,0 -0.74,0 -1,-0.18 -1,-1 q 0,-17.93 0,-35.83 c 0,-0.8 0.29,-1 1,-1 3.12,0 6.25,0 9.37,0 0.77,0 1,0.29 1,1 -0.03,1.25 -0.01,2.44 -0.01,3.63 z"/>
+  <path
+     style="fill:#ffffff"
+     d="m 34.62,56.18 v 17.57 c 0,1.32 0,1.32 -1.26,1.32 -3.22,0 -6.45,0 -9.67,0 -0.82,0 -1.06,-0.27 -1.06,-1.07 q 0,-17.82 0,-35.63 c 0,-0.86 0.31,-1.13 1.14,-1.12 3.26,0 6.51,0 9.76,0 0.87,0 1.11,0.31 1.11,1.15 -0.03,5.94 -0.02,11.86 -0.02,17.78 z"/>
+  <path
+     style="fill:#ffffff"
+     d="m 28.61,18.68 a 6.93,6.93 0 0 1 6.92,6.86 7,7 0 0 1 -6.87,6.93 6.9,6.9 0 0 1 -0.05,-13.79 z"/>
+</svg></a>
 <!-- PINTEREST -->
-<a href="https://www.pinterest.com/pin/create/button/?url=<?= $currentURL ?>&media=<?= $featuredImageURL ?>&description=<?= the_title() ?>" target="_blank"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/1wpaeaa91s2qjpo/Pinterest.svg?dl=0" alt="Pin It"></a>
+<a href="https://www.pinterest.com/pin/create/button/?url=<?= $currentURL ?>&media=<?= $featuredImageURL ?>&description=<?= the_title() ?>" target="_blank"><svg height="100"
+   width="100"
+   viewBox="0 0 100 100" class="social-icon social-icon-large">
+   <title>Share on Pinterest</title>
+    <circle
+     style="fill:#cb2028"
+     r="50"
+     cy="50"
+     cx="50"/>
+  <path
+     style="fill:#ffffff"
+     d="m 82.84,60.17 c -3.6,7.5 -9.23,13 -17.44,15.22 -7.25,2 -14,1.32 -19.35,-5 C 43.73,79.67 41.68,89.92 35.83,98 A 14.18,14.18 0 0 1 32,96.65 c -0.05,-0.68 0.1,-2.28 0,-2.91 -0.33,-4.32 -0.63,-8.65 0.34,-12.92 2,-8.8 4.12,-17.59 6.15,-26.39 A 4,4 0 0 0 38.37,52.36 20.22,20.22 0 0 1 37.68,40.89 c 0.9,-3.58 2.63,-6.64 6.17,-8.25 4.74,-2.16 9.35,0.47 10,5.62 A 18.78,18.78 0 0 1 53,45.6 c -1.15,4.2 -2.48,8.36 -3.55,12.58 a 7.32,7.32 0 0 0 3.3,8 9.53,9.53 0 0 0 7.74,1 c 4.77,-1.14 8,-4.27 10.28,-8.4 A 32,32 0 0 0 74.35,40 20,20 0 0 0 66,24.93 C 60.9,21.22 55.1,20.12 48.91,20.76 a 23,23 0 0 0 -17.34,9.91 c -5.39,7.68 -5.75,18.36 -0.22,25.91 a 2.86,2.86 0 0 1 0.29,2 c -0.33,1.77 -0.82,3.51 -1.26,5.25 -0.44,1.74 -0.88,1.8 -2.39,1 a 15.93,15.93 0 0 1 -6.23,-6 A 27.82,27.82 0 0 1 17.47,41.2 C 18.4,30.71 23,22.28 32,16.68 41.57,10.74 52.06,9.52 62.86,12.3 c 10.8,2.78 18.64,9.39 22.29,20.11 3.23,9.49 1.96,18.85 -2.31,27.76 z"/>
+</svg></a>
 <!-- FLIPBOARD -->
-<a href="https://share.flipboard.com/bookmarklet/popout?title=<?= the_title() ?>&url=<?= $currentURL ?>" target="_blank"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/ptwa5egbxmu4ava/Flipboard.svg?dl=0" alt="Pin It"></a>
+<a href="https://share.flipboard.com/bookmarklet/popout?title=<?= the_title() ?>&url=<?= $currentURL ?>" target="_blank"><svg height="100"
+   width="100"
+   viewBox="0 0 100 100" class="social-icon social-icon-large">
+   <title>Share on Flipboard</title>
+  <circle
+     style="fill:#ba1817"
+     r="50"
+     cy="50"
+     cx="50"/>
+  <path
+     style="fill:#ffffff"
+     d="M 27.65,27 H 78.4 V 43.73 H 61.6 v 17 h -17 v 17 H 27.65 Z"/>
+</svg></a>
 <!-- REDDIT -->
-<a href="https://reddit.com/submit?url=<?= $currentURL ?>&title=<?= the_title() ?>" target="_blank"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/t0clm9nbpq5tqw8/Reddit.svg?dl=0" alt="Reddit It"></a>
+<a href="https://reddit.com/submit?url=<?= $currentURL ?>&title=<?= the_title() ?>" target="_blank"><svg height="100"
+   width="100"
+   viewBox="0 0 100 100" class="social-icon social-icon-large">
+   <title>Share on Reddit</title>
+  <circle
+     style="fill:#ff4500"
+     r="50"
+     cy="50"
+     cx="50"/>
+  <path
+     style="fill:#ffffff"
+     d="m 82.13,45.69 a 7.35,7.35 0 0 0 -10.2,-1.81 1.42,1.42 0 0 1 -1.89,0.06 33.49,33.49 0 0 0 -13.8,-5.06 c -1.46,-0.2 -2.93,-0.34 -4.57,-0.52 1.09,-5.12 2.14,-10.09 3.24,-15.27 l 4.54,0.93 c 1.52,0.32 3,0.71 4.56,0.95 a 1.92,1.92 0 0 1 1.81,1.54 5.27,5.27 0 0 0 10.31,-1 5.24,5.24 0 0 0 -3.26,-5.51 5,5 0 0 0 -6,1.53 1.79,1.79 0 0 1 -2.08,0.7 C 61.44,21.46 58.05,20.83 54.7,20.06 53.31,19.74 52.58,20.14 52.29,21.52 51.2,26.68 50,31.83 49,37 a 1.64,1.64 0 0 1 -1.87,1.57 35.09,35.09 0 0 0 -17.3,5.36 1.81,1.81 0 0 1 -1.56,0 c -3.9,-2.31 -8.09,-1.61 -10.47,1.84 -2.38,3.45 -1.52,7.71 2,10.44 a 1.89,1.89 0 0 1 0.77,1.26 c -0.33,6.73 2.91,11.59 8,15.42 A 33.63,33.63 0 0 0 47,79.24 c 9.09,0.61 17.61,-1.18 25,-6.84 4.63,-3.55 7.52,-8.15 7.37,-14.22 a 2.19,2.19 0 0 1 1,-2.16 7.33,7.33 0 0 0 1.76,-10.33 z M 33.45,55 A 5.08,5.08 0 1 1 43.59,55.48 5.08,5.08 0 1 1 33.45,55 Z m 28.1,5.33 a 5.11,5.11 0 0 1 -5.14,-5 5.08,5.08 0 1 1 10.15,-0.14 5.14,5.14 0 0 1 -5.01,5.11 z"/>
+  <path
+     style="fill:#ff4500"
+     d="M 43.59,55.45 A 5.08,5.08 0 1 1 33.45,55 5.08,5.08 0 1 1 43.59,55.48 Z"/>
+  <path
+     style="fill:#ff4500"
+     d="M 66.56,55.14 A 5.08,5.08 0 1 1 56.41,55.28 5.08,5.08 0 1 1 66.56,55.14 Z"/>
+  <path
+     style="fill:#ff4500"
+     d="M 49.82,73 H 49.3 A 20.73,20.73 0 0 1 37.16,68.72 1.34,1.34 0 0 1 38.8,66.61 18.08,18.08 0 0 0 49.37,70.33 18.33,18.33 0 0 0 60.87,66.61 1.3331354,1.3331354 0 0 1 62.5,68.72 21,21 0 0 1 49.82,73 Z"/>
+</svg></a>
 <!-- EMAIL -->
-<a href="mailto:?subject=<?= the_title() ?> | Marketeer Now&body=Article: <?= $currentURL ?>"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/gooz572gd6ogwzs/Email.svg?dl=0" alt="Email"></a>
+<a href="mailto:?subject=<?= the_title() ?> | Marketeer Now&body=Article: <?= $currentURL ?>"><svg height="100"
+   width="100"
+   viewBox="0 0 100 100" class="social-icon social-icon-large">
+   <title>Share via Email</title>
+    <circle style="fill:#727272" r="50" cy="50" cx="50" />
+    <path style="fill:#727272" d="m 49.91,71.27 c -9.69,0 -19.38,0 -29.08,0 A 4.84,4.84 0 0 1 18.56,70.7 c -1,-0.58 -1.17,-1.67 -1.17,-2.77 q 0,-13.22 0,-26.41 c 0,-3.14 0,-6.28 0,-9.42 0,-2.27 1.06,-3.34 3.3,-3.34 H 79.5 a 2.86,2.86 0 0 1 3.08,2.9 5.61,5.61 0 0 1 0,0.58 q 0,17.84 0,35.66 A 4.92,4.92 0 0 1 82,70.11 c -0.57,1 -1.67,1.16 -2.77,1.16 z m 4.56,-18.95 -3.56,2.77 a 1.87,1.87 0 0 1 -2.82,0 l -3.37,-2.67 q -11,8.14 -22,16.27 L 22.8,68.9 77.94,69.61 78,69.44 Z m -5,-0.12 25.92,-20.1 H 24.5 v 0.22 z M 79.42,33 57.05,50.32 79.42,66.58 Z M 20.6,33.32 V 66.33 L 42.17,50.39 Z"/>
+    <path style="fill:#ffffff" d="M 54.47,52.32 78,69.44 77.94,69.61 22.79,68.9 22.71,68.69 q 11,-8.13 22,-16.27 l 3.37,2.67 a 1.87,1.87 0 0 0 2.82,0 z"/>
+    <path style="fill:#ffffff" d="M 49.5,52.2 24.5,32.32 V 32.1 h 50.89 z"/>
+    <path style="fill:#ffffff" d="M 79.42,33 V 66.58 L 57.05,50.32 Z"/>
+    <path style="fill:#ffffff" d="M 20.6,33.27 42.17,50.39 20.6,66.33 Z"/>
+</svg></a>
 <!-- WHATSAPP -->
-<a class="mobile-only" href="whatsapp://send?text=<?= $currentURL ?>" target="_blank"><img class="social-icon social-icon-large" src="https://dl.dropboxusercontent.com/s/oik1ko9txv9ukte/Whatsapp.svg?dl=0" alt="Reddit It"></a>
-
-
-
+<a class="mobile-only" href="whatsapp://send?text=<?= $currentURL ?>" target="_blank"><svg height="100"
+   width="100"
+   viewBox="0 0 100 100" class="social-icon social-icon-large">
+   <title>Share via Whatsapp</title>
+    <circle
+     style="fill:#25d366"
+     r="50"
+     cy="50"
+     cx="50"/>
+  <path
+     style="fill:#ffffff"
+     d="m 22.38,77.81 c 0.28,-1.37 0.41,-2.15 0.61,-2.9 0.59,-2.22 1.11,-4.45 1.84,-6.62 A 10.78,10.78 0 0 0 24.4,60 C 17.24,43.07 29.12,23.8 47.46,22.26 A 27.32,27.32 0 0 1 75,37.84 27.62,27.62 0 0 1 39,75.13 7.07,7.07 0 0 0 33.89,74.81 c -3.63,1.03 -7.28,1.9 -11.51,3 z m 6.18,-6.25 a 56,56 0 0 0 5.58,-1.36 6.76,6.76 0 0 1 5.9,0.53 A 21.08,21.08 0 0 0 53.4,72.79 23.33,23.33 0 0 0 73.1,53 C 74.61,43.48 69.29,33.4 60.4,29 a 23.6,23.6 0 0 0 -27,4.55 23.24,23.24 0 0 0 -3.77,27.45 5.51,5.51 0 0 1 0.5,4.64 c -0.56,1.76 -0.96,3.6 -1.57,5.92 z"/>
+  <path
+     style="fill:#ffffff"
+     d="M 57.94,63.19 A 24.54,24.54 0 0 1 45.27,57.74 29.72,29.72 0 0 1 37,47.45 c -1.44,-3.13 -1.39,-6.19 0.9,-8.94 1.9,-2.3 4.33,-1.9 5.51,0.81 0.41,1 0.73,1.94 1.19,2.87 a 3.1,3.1 0 0 1 -0.5,3.87 c -1.23,1.25 -1.23,2.59 -0.06,3.7 2.34,2.21 4.76,4.35 7.28,6.33 a 2.44,2.44 0 0 0 4,-0.75 c 1.15,-1.89 2.64,-2.15 4.49,-1 0.56,0.35 1.2,0.56 1.8,0.86 2.75,1.38 3.13,4.24 0.6,6.08 a 21.38,21.38 0 0 1 -4.27,1.91 z"/>
+</svg></a>
 
 
 <?php ; ?>
-
-<!-- https://share.flipboard.com/bookmarklet/popout?v=2&url=https%3A%2F%2Fwww.huffingtonpost.co.uk%2Fentry%2Fthe-waugh-zone-wednesday-january-16-2019_uk_5c3ef473e4b0922a21da2980 -->
