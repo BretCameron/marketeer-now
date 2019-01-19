@@ -109,16 +109,17 @@ p.by-line,
 
 .vertical-icons > a {
   width: 32px;
+  /* padding-bottom: 5px; */
 }
 
-.article-block > .post-thumbnail {
+/* .article-block > .post-thumbnail {
   padding-top: 3%;
   margin-bottom: -260px;
-}
+} */
 
 @media only screen and (max-width: 1410px) {
   .vertical-icons {
-    visibility: hidden;
+    display: none;
   }
 }
 
@@ -768,6 +769,11 @@ a.permalink:hover > div > .related-stories-img {
   transform: translate(-50%, -50%);
   max-width: 1200px;
   margin: auto;
+  -khtml-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -932,4 +938,15 @@ a > .author-image > img:hover {
   /* 0px is the normal value */
   /* top: 32px; */
   /* 3px is helpful for development */
+}
+
+/* EXPAND IMAGE */
+
+#expand-image {
+  width: 30px;
+  height: 30px;
+  fill: white;
+  position: absolute;
+  opacity: 0.6;
+  pointer-events: none;
 }
