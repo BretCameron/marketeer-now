@@ -104,6 +104,11 @@ p.by-line,
   top: -276px;
   padding-top: 10px;
   transform: translate(-70px, 276px);
+  width: 32px;
+}
+
+.vertical-icons > a {
+  width: 32px;
 }
 
 .article-block > .post-thumbnail {
@@ -123,7 +128,6 @@ p.by-line,
   }
 }
 
-
 .display-none {
   display: none;
 }
@@ -140,11 +144,11 @@ p.by-line,
 
 /* TEMPORARILY DISABLE CATEGORY LINKS */
 
-ul.post-categories > li > a {
+/* ul.post-categories > li > a {
   text-decoration: none;
   pointer-events: none;
   cursor: not-allowed;
-}
+} */
 
 /* CONSTRAIN CUSTOM LOGO SIZE, ALLOWING LARGER IMAGES FOR HIGH RETINA DISPLAYS */
 
