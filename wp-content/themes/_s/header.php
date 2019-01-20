@@ -1,17 +1,15 @@
 <?php
 
 /**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
+ * The header for our theme, which displays all of the <head> section and everything up until <div id="content">
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
  * @package Marketeer_Now
+ * @author Bret Cameron <bretcameron@gmail.com>
  */
 
 ?>
 
+<!-- The header contains the HTML and Head tags. -->
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -22,11 +20,8 @@
 	<?php wp_head(); ?>
 </head>
 
-
-	<body <?php body_class(); ?>>
-
-
- <!-- HEADER -->
+<!-- The header opens the body tag, which will be closed in the footer.  -->
+<body <?php body_class(); ?>>
 
     <header id="nav-header">
         <div class="container">
@@ -36,10 +31,3 @@
 			</div>
 		</div>
 	</header>
-	
-<div class="container"></div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script></script>
-
-    <!-- END OF HEADER -->
