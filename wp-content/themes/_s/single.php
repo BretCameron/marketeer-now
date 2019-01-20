@@ -61,6 +61,16 @@ while (have_posts()) :
 marketeer_now_post_thumbnail();
 ?>
 
+<div class="article-page-category">
+						<div class="box-left">
+						<!-- Transparent Placeholder -->
+					</div>
+					<div class="box-right">
+						<?php the_category() ?>
+					</div>	
+</div>
+			
+
 <svg id="expand-image" viewBox="0 0 100 100">
 	<title>Expand Image</title>
 	<path d="M86.86,37.22c-.58-.53-1.18-1-1.73-1.59C82.4,32.8,79.66,30,77,27.09c-.77-.82-1.25-.74-2,0Q66.29,36.3,57.52,45.42c-.44.45-.91.88-1.34,1.31l-4.36-4.64c.74-.8,1.56-1.71,2.41-2.59L70.37,22.65c1.17-1.21,1.16-1.22,0-2.43q-4.5-4.71-9-9.43a6.46,6.46,0,0,1-.51-.74h26Z"/>
@@ -300,6 +310,7 @@ $('.article-block > .post-thumbnail > img').click(function () {
 	if ($('.lightbox-window').hasClass('hidden')) {
 		$('.lightbox-window').removeClass('hidden');
 		$('#expand-image').addClass('hidden');
+		$('.article-page-category').addClass('hidden');
 	};
 });
 
@@ -307,6 +318,7 @@ $('.lightbox-window').click(function () {
 	if (!$('.lightbox-window').hasClass('hidden')) {
 		$('.lightbox-window').addClass('hidden');
 		$('#expand-image').removeClass('hidden');
+		$('.article-page-category').removeClass('hidden');
 	};
 });//.children().click(function(e) {
 //   return false;
@@ -341,16 +353,43 @@ function positionExpandImage() {
 	
 };
 
+// ARTICLE PAGE CATEGORY
+$(document).ready(positionCategory);
+$(window).resize(positionCategory);
+
+function positionCategory() {
+	$('.article-block > .post-thumbnail > img');
+	$('.article-page-category');
+	let imageTop = $('.article-block > .post-thumbnail > img').offset().top;
+	let imageLeft = $('.article-block > .post-thumbnail > img').offset().left;
+	let imageWidth = $('.article-block > .post-thumbnail > img').width();
+	let imageHeight = $('.article-block > .post-thumbnail > img').height();
+	let categoryHeight = $('.article-page-category').height();
+	let categoryWidth = $('.article-page-category').width();
+	$('.article-page-category').css('top',imageTop + imageHeight - categoryHeight).css('left',imageLeft + imageWidth - categoryWidth);
+};
+
+// HOVER OVER IMAGE 
+let originalOpacity = $('#expand-image').css('opacity');
+
+$('.article-block > .post-thumbnail > img').hover(
+	function () {
+	$('#expand-image').animate({opacity: 1}, 100);
+}, function () {
+	$('#expand-image').animate({opacity: originalOpacity}, 100);
+});
+
+
 // REDUCE VERTICAL GAP CREATED BY VERTICAL SOCIAL ICONS
 
-let verticalIconsHeight = $('.vertical-icons').height();
 
 $(document).ready(removeVerticalIconGap);
 $(window).resize(removeVerticalIconGap);
 
 function removeVerticalIconGap() {
+	let verticalIconsHeight = $('.vertical-icons').outerHeight();
 	if ($('.vertical-icons').css('display') == 'none') {
-		$('.article-block > .post-thumbnail').css('margin-bottom',-0);
+		$('.article-block > .post-thumbnail').css('margin-bottom',0);
 	} else {
 		$('.article-block > .post-thumbnail').css('margin-bottom',-verticalIconsHeight);
 	};
