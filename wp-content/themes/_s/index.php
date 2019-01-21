@@ -87,7 +87,7 @@ wp_reset_postdata();
 ?>
 
 <!-- LOOP 2 (LATEST POSTS) -->
-<h2>Latest Posts</h2>
+<h2>Latest Stories</h2>
 <div class="latest-posts">
 
 <?php
