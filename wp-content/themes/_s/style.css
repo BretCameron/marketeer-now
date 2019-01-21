@@ -46,6 +46,7 @@ h2 {
 .article-block > h4,
 .article-block > h5 {
   padding-top: 15px;
+  text-align: left;
 }
 
 .article-block > ul > li,
@@ -542,7 +543,7 @@ a.permalink > h1 {
 }
 
 #colophon > div > p {
-  padding-top: 1.6rem;
+  /* padding-top: 1.6rem; */
   font-size: 14px;
 }
 

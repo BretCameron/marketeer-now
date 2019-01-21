@@ -104,7 +104,7 @@ while (have_posts()) :
 
 	<!-- 2. THE RELATED SECTION -->
 <div class="related-block">
-<h2>Related Stories</h2>
+<h2>Recent Stories</h2>
 	
 	
 <?php
@@ -183,7 +183,7 @@ echo $authorDesc; ?>
 endwhile; // End of the loop.
 ?>
 <br>
-<h2>Related Stories</h2>
+<h2>Recent Stories</h2>
 
 <div class="related2-flex">
 					<?php
