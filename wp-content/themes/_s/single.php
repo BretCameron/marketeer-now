@@ -21,7 +21,7 @@ $featuredImageURL = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID)
 ?>
 <div class="lightbox-window hidden">
 	<div id="featured-lightbox" class="container">
-		<img itemprop="image" class="lightbox-img" src="<?= $featuredImageURL ?>">
+		<img class="lightbox-img" src="<?= $featuredImageURL ?>">
 	</div> <!-- .lightbox-window .hidden -->
 </div> <!-- #featured-lightbox .container -->
 <!-- End of LIGHTBOX -->
@@ -56,12 +56,28 @@ while (have_posts()) :
 <div class="flex-article">
 	<!-- 1. THE ARTICLE SECTION -->
 	<div class="article-block" itemscope itemtype="https://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://example.com/article-1">
+	  
+	<!-- META TAGS -->
+	<link itemprop="mainEntityOfPage" href="<?php the_permalink() ?>">
+  	<div itemprop="publisher" itemscope="Marketeer Now" itemtype="https://schema.org/Organization">
+	<meta itemprop="name" content="Marketeer Now">
+		<div itemprop="logo" itemscope="" itemtype="https://schema.org/ImageObject">
+			<meta itemprop="url" content="			
+			<?php 
+		$custom_logo_id = get_theme_mod('custom_logo');
+		$custom_logo_image = wp_get_attachment_image_src($custom_logo_id, 'full');
+		echo $custom_logo_image[0];
+		?>
+		">
+		</div>
+		<link itemprop="sameAs" href="https://marketeernow.com">
+	</div>
 
 <!-- The post image -->
 <?php
 marketeer_now_post_thumbnail();
 ?>
+<meta itemprop="image" content="<?= $featuredImageURL ?>">
 			
 <!-- The expand image icon -->
 <svg id="expand-image" viewBox="0 0 100 100">
