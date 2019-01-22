@@ -21,7 +21,7 @@ $featuredImageURL = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID)
 ?>
 <div class="lightbox-window hidden">
 	<div id="featured-lightbox" class="container">
-		<img class="lightbox-img" src="<?= $featuredImageURL ?>">
+		<img itemprop="image" class="lightbox-img" src="<?= $featuredImageURL ?>">
 	</div> <!-- .lightbox-window .hidden -->
 </div> <!-- #featured-lightbox .container -->
 <!-- End of LIGHTBOX -->
@@ -56,6 +56,7 @@ while (have_posts()) :
 <div class="flex-article">
 	<!-- 1. THE ARTICLE SECTION -->
 	<div class="article-block" itemscope itemtype="https://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://example.com/article-1">
 
 <!-- The post image -->
 <?php
@@ -79,7 +80,16 @@ marketeer_now_post_thumbnail();
 <h1 itemprop="headline"><?= the_title() ?></h1>
 
 <!-- The byline, featuring the name of the author and the date and time of publication -->
-<p class="by-line">By <span itemprop="author"><?php the_author(); ?></span> — <time itemprop="datePublished" datetime="<?php echo the_date('Y-m-d\TH:i') ?>"><?= the_time("l, F jS, Y \a\\t g:i A") ?></time></p>
+<p class="by-line">
+	By 
+	<span itemprop="author">
+		<?php the_author(); ?>
+	</span>
+	 — 
+	<time itemprop="datePublished" datetime="<?php echo the_date('Y-m-d\TH:i') ?>">
+	<?= the_time("l, F jS, Y \a\\t g:i A") ?>
+	</time>
+</p>
 
 <!-- The post read time, and social sharing icons on less wide displays -->
 <div class="read-time">
@@ -108,6 +118,16 @@ the_excerpt();
 
 <!-- The main text of the post -->
 <div id="articleBody" itemprop="articleBody"><?= the_content() ?></div><br>
+
+	<div class="last-modified">
+	Last modified on 
+	<time itemprop="dateModified" datetime="<?php echo the_modified_date('Y-m-d\TH:i') ?>">
+	<?php the_modified_date("l, F jS, Y \a\\t g:i A") ?>
+	</time>	
+	</div>
+	<br><br>
+
+
 
 	</div> <!-- .article block -->
 

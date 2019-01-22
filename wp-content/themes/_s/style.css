@@ -66,6 +66,18 @@ p {
 p.by-line,
 #colophon > div > p {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 18px;
+  font-family: "Muli", sans-serif;
+  font-weight: 400;
+}
+
+/* LAST MODIFIED */
+
+.last-modified {
+  font-style: italic;
+  font-weight: 200;
+  font-size: 18px;
+  font-family: "Muli", sans-serif;
 }
 
 .container {

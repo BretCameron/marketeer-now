@@ -15,8 +15,8 @@
 <footer id="colophon" class="footer-top site-footer">
 	<div class="container">
 		<br><p><a href="https://marketeernow.com/privacy-policy/" class="footer-link">Privacy Policy</a></p>
-		<p><a href="https://linkedin.com/in/bretcameron/" class="footer-link">© Bret Cameron 2019</a>
-		<br><a href="https://linkedin.com/in/bretcameron/" class="footer-link">https://linkedin.com/in/bretcameron/</a></p>
+		<p><a href="#" class="footer-link">© <span itemprop="publisher">Marketeer Now</span> 2019</a>
+		<br>Website by <a href="https://linkedin.com/in/bretcameron/" class="footer-link">Bret Cameron</a></p>
 	</div>
 </footer>
 
