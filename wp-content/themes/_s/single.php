@@ -55,10 +55,12 @@ while (have_posts()) :
 			
 <div class="flex-article">
 	<!-- 1. THE ARTICLE SECTION -->
-	<div class="article-block">
+	<div class="article-block" itemscope itemtype="https://schema.org/Article">
 
 <!-- The post image -->
-<?php marketeer_now_post_thumbnail(); ?>
+<?php
+marketeer_now_post_thumbnail();
+?>
 			
 <!-- The expand image icon -->
 <svg id="expand-image" viewBox="0 0 100 100">
@@ -74,10 +76,10 @@ while (have_posts()) :
 </div>
 
 <!-- The post title -->
-<h1><?= the_title() ?></h1>
+<h1 itemprop="headline"><?= the_title() ?></h1>
 
 <!-- The byline, featuring the name of the author and the date and time of publication -->
-<p class="by-line">By <?php the_author(); ?> — <?= the_time("l, F jS, Y \a\\t g:i A") ?></p>
+<p class="by-line">By <span itemprop="author"><?php the_author(); ?></span> — <time itemprop="datePublished" datetime="<?php echo the_date('Y-m-d\TH:i') ?>"><?= the_time("l, F jS, Y \a\\t g:i A") ?></time></p>
 
 <!-- The post read time, and social sharing icons on less wide displays -->
 <div class="read-time">
@@ -89,8 +91,23 @@ while (have_posts()) :
 		<hr class="style-one">
 </div> <!-- .read-time -->
 
+<!-- The excerpt of the post -->
+<?php 
+function wpb_custom_excerpt($output)
+{
+	if (has_excerpt()) {
+		$output = strip_tags($output);
+		$output = '<p class="excerpt" itemprop="description">' . $output . '</p>';
+	}
+	return $output;
+}
+add_filter('the_excerpt', 'wpb_custom_excerpt');
+
+the_excerpt();
+?>
+
 <!-- The main text of the post -->
-<p><?= the_content() ?></p><br>
+<div id="articleBody" itemprop="articleBody"><?= the_content() ?></div><br>
 
 	</div> <!-- .article block -->
 
@@ -321,22 +338,6 @@ function positionExpandImage() {
 // REPOSITION
 	$('#expand-image').css('top',imageTop + normalPadding * Math.sqrt(relativeHeight)).css('left',imageLeft + imageWidth - iconWidth - normalPadding * Math.sqrt(relativeHeight));
 	
-};
-
-// ARTICLE PAGE CATEGORY
-$(document).ready(positionCategory);
-$(window).resize(positionCategory);
-
-function positionCategory() {
-	$('.article-block > .post-thumbnail > img');
-	$('.article-page-category');
-	let imageTop = $('.article-block > .post-thumbnail > img').offset().top;
-	let imageLeft = $('.article-block > .post-thumbnail > img').offset().left;
-	let imageWidth = $('.article-block > .post-thumbnail > img').width();
-	let imageHeight = $('.article-block > .post-thumbnail > img').height();
-	let categoryHeight = $('.article-page-category').height();
-	let categoryWidth = $('.article-page-category').width();
-	$('.article-page-category').css('top',imageTop + imageHeight - categoryHeight).css('left',imageLeft + imageWidth - categoryWidth);
 };
 
 // HOVER OVER IMAGE 

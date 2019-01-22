@@ -49,8 +49,8 @@ h2 {
   text-align: left;
 }
 
-.article-block > ul > li,
-.article-block > ol > li {
+.article-block > div > ul > li,
+.article-block > div > ol > li {
   font-size: 18px;
   font-family: "Muli", sans-serif;
   font-weight: 300;
@@ -956,4 +956,11 @@ a > .author-image > img:hover {
 
 .article-page-category {
   position: absolute;
+}
+
+/* EXCERPT */
+
+.excerpt {
+  font-weight: bold;
+  font-style: italic;
 }
