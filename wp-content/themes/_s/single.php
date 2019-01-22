@@ -59,14 +59,6 @@ while (have_posts()) :
 
 <!-- The post image -->
 <?php marketeer_now_post_thumbnail(); ?>
-
-<!-- The post category -->
-<div class="article-page-category">
-	<div class="box-left"> <!-- A transparent section --></div>
-	<div class="box-right"> <!-- The section which holds the category -->
-		<?php the_category() ?>
-	</div>
-</div> <!--.article-page-category -->
 			
 <!-- The expand image icon -->
 <svg id="expand-image" viewBox="0 0 100 100">
