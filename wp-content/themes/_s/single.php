@@ -93,7 +93,7 @@ marketeer_now_post_thumbnail();
 </div>
 
 <!-- The post title -->
-<h1 itemprop="headline"><?= the_title() ?></h1>
+<h1 id="headline" itemprop="headline"><?= the_title() ?></h1>
 
 <!-- The byline, featuring the name of the author and the date and time of publication -->
 <p class="by-line">
@@ -334,6 +334,10 @@ $('.article-block > .post-thumbnail > img').click(function () {
 		$('.lightbox-window').removeClass('hidden');
 		$('#expand-image').addClass('hidden');
 		$('.article-page-category').addClass('hidden');
+		// REMOVE OVERLAP FROM NAVBAR
+		if ($('.nav-content').css('display') != 'none') {
+		openCategoriesDropdown();
+		};
 	};
 });
 
@@ -399,6 +403,14 @@ function removeVerticalIconGap() {
 		$('.article-block > .post-thumbnail').css('margin-bottom',0);
 	} else {
 		$('.article-block > .post-thumbnail').css('margin-bottom',-verticalIconsHeight);
+		let headlineTop = $('#headline').offset().top;
+		console.log(headlineTop);
+	// 	$('.vertical-icons').css('top',-headlineTop);
+	// 	$('.vertical-icons').css({
+    // "-webkit-transform":"translateY("+headlineTop+")",
+    // "-ms-transform":"translateY("+headlineTop+")",
+    // "transform":"translateY("+headlineTop+")"
+//   });​
 	};
 };
 
