@@ -90,7 +90,13 @@
             }
         });
         
+        //Open Categories Dropdown
         $('#categories').click(openCategoriesDropdown);
+
+        //Prevent Children From Firing
+        $('#categories .nav-content').click(function (e){
+            e.stopPropagation();
+        });
                 
         function openCategoriesDropdown() {
             if ($('.nav-content').css('display') == 'none') {
