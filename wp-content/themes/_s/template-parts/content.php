@@ -12,7 +12,6 @@
 
 
 <!-- IMAGE -->
-
 			<div class="latest-post">
 				<div class="image-wrapper">
 					<div class="inner-image">

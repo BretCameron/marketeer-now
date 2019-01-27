@@ -28,6 +28,7 @@ body {
 
 h1 {
   font-style: italic;
+  font-size: 2rem;
 }
 
 h2 {
@@ -541,6 +542,7 @@ a.permalink:hover {
 a.permalink > h1 {
   margin-top: 8px;
   padding-right: 10px;
+  margin-bottom: 0;
 }
 
 .article-block > h1 {
@@ -585,6 +587,7 @@ a.footer-link:visited {
 
 .flex-article {
   display: flex;
+  width: 100%;
 }
 
 .flex-above-article {
@@ -1020,6 +1023,7 @@ ul.nav {
   margin-left: -15px;
   margin-top: 15px;
   z-index: 1;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.39);
 }
 
 .nav-sub > ul > li {
@@ -1116,14 +1120,13 @@ input.submit {
 
 @keyframes shake {
   30%,
-  50%,
-  70% {
-    transform: translate3d(-4px, 0, 0);
+  50% {
+    transform: translate3d(-2px, 0, 0);
   }
 
   40%,
   60% {
-    transform: translate3d(4px, 0, 0);
+    transform: translate3d(2px, 0, 0);
   }
 }
 
@@ -1155,6 +1158,7 @@ input.field::placeholder {
     /* margin-top: 10px; */
     margin-top: 10px;
     max-width: calc(100vw - 5px);
+    box-shadow: none;
   }
   .mobile-nav {
     display: block;
@@ -1178,5 +1182,28 @@ input.field::placeholder {
 
   #searchform > input.field {
     width: calc(100vw - 96px);
+    max-width: 300px;
   }
+}
+
+/* SEARCH PAGE */
+
+.search-page-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: -2px;
+}
+
+.search-page-flex > article {
+  /* max-width: 600px; */
+  /* width: 600px; */
+  flex: 1;
+  min-width: 300px;
+  padding: 2px;
+}
+
+#search-query {
+  /* color: rgb(0, 0, 138); */
+  text-decoration: lightgrey underline;
 }

@@ -124,8 +124,9 @@ function wpb_custom_excerpt($output)
 	if (has_excerpt()) {
 		$output = strip_tags($output);
 		$output = '<p class="excerpt" itemprop="description">' . $output . '</p>';
+		return $output;
 	}
-	return $output;
+	return false;
 }
 add_filter('the_excerpt', 'wpb_custom_excerpt');
 

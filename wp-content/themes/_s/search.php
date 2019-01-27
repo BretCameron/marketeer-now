@@ -13,18 +13,19 @@ get_header();
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
-
+			<div class="container">
 		<?php if (have_posts()) : ?>
 
 			<header class="page-header">
 				<h1 class="page-title">
 					<?php
 					/* translators: %s: search query. */
-				printf(esc_html__('Search Results for: %s', 'marketeer-now'), '<span>' . get_search_query() . '</span>');
+				printf(esc_html__('Search Results for: %s', 'marketeer-now'), '<span id="search-query">' . get_search_query() . '</span>');
 				?>
 				</h1>
 			</header><!-- .page-header -->
 
+<div class="search-page-flex">
 			<?php
 			/* Start the Loop */
 		while (have_posts()) :
@@ -39,7 +40,7 @@ get_header();
 
 		endwhile;
 
-		the_posts_navigation();
+		// the_posts_navigation();
 
 		else :
 
@@ -48,9 +49,27 @@ get_header();
 		endif;
 		?>
 
+
+	</div>
+			</div><!-- .container -->
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
 <?php
-get_sidebar();
-get_footer();
+// get_sidebar(); //Temporarily disabled, while this theme has no sidebar
+get_footer(); // The site's footer
+?>
+
+<?php
+
+$content = apply_filters('the_content', $post->post_content);
+function contentPreview($content, $numOfWords = 10)
+{
+	$content = str_replace(array("\r", "\n"), '', $content);
+	$spaceString = str_replace('<', ' <', $content);
+	$doubleSpace = strip_tags($spaceString);
+	$singleSpace = str_replace('  ', ' ', $doubleSpace);
+	$pieces = explode(" ", $singleSpace);
+	$first_part = implode(" ", array_splice($pieces, 0, $numOfWords));
+	return $first_part;
+};

@@ -84,10 +84,14 @@
         $('.mobile-nav').click(function () {
             if ($('ul.nav').css('display') == 'none') {
                 $('ul.nav').css('display', 'block');
+                if (typeof positionExpandImage === "function") {
 				positionExpandImage();
+                };
             } else {
                 $('ul.nav').css('display', 'none');
+				if (typeof positionExpandImage === "function") {
 				positionExpandImage();
+                };
             }
         });
         
