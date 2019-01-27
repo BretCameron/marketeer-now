@@ -72,6 +72,7 @@
             <li class="nav-item">
                 <a class="nav-link">Write For Us</a>
             </li>
+            <div class="nav-search"><?php get_search_form($echo = true) ?></div>
         </ul>
         </div>
 	</nav>
