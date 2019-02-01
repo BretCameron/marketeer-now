@@ -149,7 +149,7 @@ endwhile; // End of the loop.
 <div class="related2-flex">
 					<?php
 
-				$relatedPosts2 = new WP_Query('posts_per_page=5');
+				$relatedPosts2 = new WP_Query('posts_per_page=10');
 				$postid = get_the_ID();
 
 				while ($relatedPosts2->have_posts()) : $relatedPosts2->the_post();

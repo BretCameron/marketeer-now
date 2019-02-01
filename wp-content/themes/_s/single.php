@@ -98,9 +98,11 @@ marketeer_now_post_thumbnail();
 <!-- The byline, featuring the name of the author and the date and time of publication -->
 <p class="by-line">
 	By 
-	<span itemprop="author">
-		<?php the_author(); ?>
-	</span>
+	<span itemprop="author"><a href="
+	<?php 
+$authorURL = get_author_posts_url(get_the_author_meta('ID'));
+echo $authorURL;
+?>"><?php the_author(); ?></a></span>
 	 — 
 	<time itemprop="datePublished" datetime="<?php echo the_date('Y-m-d\TH:i') ?>">
 	<?= the_time("l, F jS, Y \a\\t g:i A") ?>
@@ -234,7 +236,7 @@ endwhile; // End of the loop.
 <div class="related2-flex">
 					<?php
 
-				$relatedPosts2 = new WP_Query('posts_per_page=5');
+				$relatedPosts2 = new WP_Query('posts_per_page=10');
 				$postid = get_the_ID();
 
 				while ($relatedPosts2->have_posts()) : $relatedPosts2->the_post();
@@ -314,7 +316,7 @@ $('#author-description').append('<br><br>');
 
 Object.entries(autoSocialIcons).forEach(([key, value]) => {
     if (autoSocialIcons[key]['URL']) {
-        $('#author-description').append(`<a href="${autoSocialIcons[key]['URL']}"><img class="social-icon" src="${autoSocialIcons[key]['imageURL']}" alt="${autoSocialIcons[key]['URL']}" height="30px" width="30px"></a>`);
+        $('#author-description').append(`<a href="${autoSocialIcons[key]['URL']}" target="_blank"><img class="social-icon" src="${autoSocialIcons[key]['imageURL']}" alt="${autoSocialIcons[key]['URL']}" height="30px" width="30px"></a>`);
     };
 });
 

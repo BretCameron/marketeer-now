@@ -140,7 +140,7 @@ $('#author-description').append('<br><br>');
 
 Object.entries(autoSocialIcons).forEach(([key, value]) => {
     if (autoSocialIcons[key]['URL']) {
-        $('#author-description').append(`<a href="${autoSocialIcons[key]['URL']}"><img class="social-icon" src="${autoSocialIcons[key]['imageURL']}" alt="${autoSocialIcons[key]['URL']}" height="30px" width="30px"></a>`);
+        $('#author-description').append(`<a href="${autoSocialIcons[key]['URL']}" target="_blank"><img class="social-icon" src="${autoSocialIcons[key]['imageURL']}" alt="${autoSocialIcons[key]['URL']}" height="30px" width="30px"></a>`);
     };
 });
 

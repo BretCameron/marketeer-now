@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying 404 pages (not found)
  *
@@ -12,49 +13,67 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
+<div class="container">
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'marketeer-now' ); ?></h1>
-				</header><!-- .page-header -->
+<div class="container-404">
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'marketeer-now' ); ?></p>
+	<h1 id="title404"><?php esc_html_e('404'); ?></h1>
+	
+	
+	<p><?php esc_html_e('Woops! It looks like nothing was found at this location. Maybe look through the articles below, or try a search?', 'marketeer-now'); ?></p>
+	
+	            <div class="search-404"><?php get_search_form($echo = true) ?></div>
 
-					<?php
-					get_search_form();
+</div>
+			<div class="author-page-flex">
+		<?php 
 
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
+// The $latestPosts query returns a chosen number of the most recent posts. 
+	$lostPosts = new WP_Query('posts_per_page=10');
+	while ($lostPosts->have_posts()) : $lostPosts->the_post();
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'marketeer-now' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-							?>
-						</ul>
-					</div><!-- .widget -->
+// IDs are defined here in order to remove the latest / featured post from the selection.
+	$content = apply_filters('the_content', $post->post_content);
+	require 'post-preview.php';
+	endwhile;
+	wp_reset_postdata();
+// The end of the $latestPosts query. 
 
-					<?php
-					/* translators: %1$s: smiley */
-					$marketeer_now_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'marketeer-now' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$marketeer_now_archive_content" );
+	?>
 
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
+				</div><!-- .author-page-flex -->
 
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
+			</div> <!-- .container -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
 get_footer();
+
+?>
+
+<!-- FUNCTIONS -->
+
+<?php
+// FUNCTION TO GET READING TIME
+function getReadingTime($content, $wordsPerMinute = 200, $message = 'minute read')
+{
+	$readingTime = round(str_word_count(strip_tags($content)) / $wordsPerMinute);
+	if ($readingTime == 0) {
+		$readingTime += 1;
+	}
+	return $readingTime . ' ' . $message;
+};
+
+
+// FUNCTION TO RETURN A PREVIEW OF THE ARTICLE CONTENT
+function contentPreview($content, $numOfWords = 10)
+{
+	$content = str_replace(array("\r", "\n"), '', $content);
+	$spaceString = str_replace('<', ' <', $content);
+	$doubleSpace = strip_tags($spaceString);
+	$singleSpace = str_replace('  ', ' ', $doubleSpace);
+	$pieces = explode(" ", $singleSpace);
+	$first_part = implode(" ", array_splice($pieces, 0, $numOfWords));
+	return $first_part;
+};

@@ -53,7 +53,7 @@
                 <a href="<?= home_url() ?>" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link">Our Mission</a>
+                <a class="nav-link" href="<?= home_url() . '/about-us' ?>">Our Mission</a>
             </li>
             <li id="categories" class="nav-item">
                 <a class="nav-link">Categories <span style="font-size:6px;display:inline-block;transform:translateY(-2px);padding-left:5px;">╲╱</span></a>
@@ -61,16 +61,16 @@
                     <div class="nav-sub">
                         <ul class="nav">
                             <li class="nav-item">
-                                <a class="nav-link">Opinion</a>
+                                <a class="nav-link" href="<?= home_url() . '/category/opinion' ?>">Opinion</a>
                             </li>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a class="nav-link">How-To</a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
             <li class="nav-item">
-                <a class="nav-link">Write For Us</a>
+                <a class="nav-link" href="<?= home_url() . '/write-for-us' ?>">Write For Us</a>
             </li>
             <div class="nav-search"><?php get_search_form($echo = true) ?></div>
         </ul>

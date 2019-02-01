@@ -92,7 +92,7 @@ wp_reset_postdata();
 
 <?php
 // The $latestPosts query returns a chosen number of the most recent posts. 
-$latestPosts = new WP_Query('posts_per_page=5');
+$latestPosts = new WP_Query('posts_per_page=10');
 while ($latestPosts->have_posts()) : $latestPosts->the_post();
 
 // IDs are defined here in order to remove the latest / featured post from the selection.
