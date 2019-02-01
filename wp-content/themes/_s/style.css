@@ -933,6 +933,13 @@ a > .author-image > img:hover {
   margin-left: 20px;
 }
 
+@media only screen and (max-width: 400px) {
+  .flex-author > #author-description {
+    padding: 0;
+    margin: 0 auto;
+  }
+}
+
 .author-image > img.avatar {
   margin: -10px 0 10px 0;
 }
@@ -1181,7 +1188,7 @@ input.field::placeholder {
   .nav-search {
     background: rgb(40, 40, 40);
     float: none;
-    width: 100vw;
+    /* width: 100vw; */
     /* text-align: left; */
   }
 
