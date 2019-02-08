@@ -20,6 +20,11 @@
     <?php //If homepage, add Open Graph image tag
     if (is_home()): ?>
     <meta property="og:image" content="https://marketeernow.com/marketeer_now_homepage-2/" />
+    <meta property="og:image:url" content="https://marketeernow.com/marketeer_now_homepage-2/" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta propert="og:image:width" content="1200" />
+    <meta propert="og:image:height" content="675" />
+    <meta propert="og:image:alt" content="Marketeer Now" />
     <?php endif; ?>
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link defer href="https://fonts.googleapis.com/css?family=Muli:200,300,400" rel="stylesheet">
