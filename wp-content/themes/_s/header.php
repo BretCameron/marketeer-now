@@ -17,6 +17,10 @@
 	<meta name="google-site-verification" content="GWqCP2-qh8LLG5fnvd95PEkD0K80qZ-os4JVBqR_wNU" />
 	<!-- Bing Webmaster -->
 	<meta name="msvalidate.01" content="EEC1BA5595057A957BA1213EF1E09C34" />
+    <?php //If homepage, add Open Graph image tag
+    if (is_home()): ?>
+    <meta property="og:image" content="https://marketeernow.com/marketeer_now_homepage-2/" />
+    <?php endif; ?>
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link defer href="https://fonts.googleapis.com/css?family=Muli:200,300,400" rel="stylesheet">
 	<!-- Global site tag (gtag.js) - Google Analytics -->
