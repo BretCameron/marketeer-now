@@ -20,8 +20,8 @@
     <meta property="fb:app_id" content="2246534212073876" />
     <?php //If homepage, add Open Graph image tag
     if (is_home()): ?>
-    <meta property="og:image" content="https://marketeernow.com/marketeer_now_homepage-2/" />
-    <meta property="og:image:url" content="https://marketeernow.com/marketeer_now_homepage-2/" />
+    <meta property="og:image" content="https://marketeernow.com/marketeer_now_homepage-5/" />
+    <meta property="og:image:url" content="https://marketeernow.com/marketeer_now_homepage-5/" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="675" />
