@@ -11,11 +11,12 @@
 get_header(); // The site's header
 ?>
 
+<meta property="og:image" content="https://marketeernow.com/marketeer_now_homepage-2/" />
+
 <div id="primary" class="content-area"> 
 	<div class="container">
 		<main id="main" class="site-main">
 			<br> <!-- A line between the header and the following content -->
-
 
 <!-- LOOP 1 (Featured Post) -->
 <?php
